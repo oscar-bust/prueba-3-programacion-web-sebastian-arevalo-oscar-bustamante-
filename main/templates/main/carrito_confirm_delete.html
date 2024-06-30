@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmar Eliminación</title>
+</head>
+<body>
+  <h2>¿Estás seguro de querer eliminar "{{ carrito.nombre_producto }}" del carrito?</h2>
+  <form action="{% url 'carrito_delete' carrito.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+    <a href="{% url 'carrito_list' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</body>
+</html>

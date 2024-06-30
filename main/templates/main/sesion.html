@@ -1,0 +1,111 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{% static 'css/resgitrarse.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <img src="{% static 'img/logo.png' %}" width="70px">
+        <a class="navbar-brand" href="#">On Venv</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Sobre nostros</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'sesion' %}">Iniciar Sesion</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrarse</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">volver al inicio</a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'carro' %}"><img src="{% static 'img/carro.png' %}" width="30px"></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  otras acciones
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#">Contacto</a></li>
+                  <li><a class="dropdown-item" href="{% url 'registrarse' %}">Registarse</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">donar</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscas algo?" aria-label="Search">
+              <button class="btn btn-success" type="submit"><img src="{% static 'img/lupa.png' %}" width="25px" alt=""></button>
+            </form>
+            <div class="row">
+              <div class="col">
+                
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  
+
+
+  
+  
+  
+   <section class="form-registrer"> 
+    <h4>Iniciar Sesion</h4>
+     <input class="control" type="text" name="usuario" id="usuario" placeholder="ingrese tu correo">
+     <input class="control" type="text" name="contraseña" id="contraseña" placeholder="ingrese su contraseña">
+    
+     <a href="{% url 'index' %}"><input class="boton" onclick="location.href='index.html'" type="submit" id="submitt" value="Iniciar Sesion" style="display: none;" ></a>
+     
+     <p><a href="{% url 'index' %}">inicio</a></p>
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+
+    <script src="{% static 'js/login.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <img src="{% static 'img/logo.png' %}" width="70px">
+        <a class="navbar-brand" href="#">On Venv</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}">Sobre nostros</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'sesion' %}">Iniciar Sesion</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrarse</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">volver al inicio</a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'carro' %}"><img src="{% static 'img/carro.png' %}" width="30px"></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  otras acciones
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#">Contacto</a></li>
+                  <li><a class="dropdown-item" href="{% url 'registrarse' %}">Registarse</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">donar</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscas algo?" aria-label="Search">
+              <button class="btn btn-success" type="submit"><img src="{% static 'img/lupa.png' %}" width="25px" alt=""></button>
+            </form>
+            <div class="row">
+              <div class="col">
+                
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    
+
+
+
+
+
+
+
+
+
+          
+          <!--separacion cards-->
+         
+
+
+
+
+
+
+          <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'img/girasoles.jpg' %}" class="card-img-top" width="100px" alt="50px">
+                  <div class="card-body">
+                    <h5 class="card-title">5.000 C/U$</h5>
+                    <button type="button" class=" add-to-cart" data-name="girasoles" data-price="5000">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'img/captus.jpg' %}" class="card-img-top" width="100px" alt="50px">
+                  <div class="card-body">
+                    <h5 class="card-title">10.000$</h5>
+                    <button type="button" class=" add-to-cart" data-name="captus" data-price="10000">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'img/plantas.jpg' %}" class="card-img-top"  width="100px" alt="Rastrillo">
+                  <div class="card-body">
+                    <h5 class="card-title">15.000$</h5>
+                    <button type="button" class="add-to-cart" data-name="plantas" data-price="15000">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'img/margaritas.jpg' %}" class="card-img-top" width="100px" alt="Tijeras">
+                  <div class="card-body">
+                    <h5 class="card-title">2.000$</h5>
+                    <button type="button" class="badd-to-cart" data-name="margaritas" data-price="2000">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="container mt-4">
+            <a href="{% url 'carro' %}" class="btn btn-success">Ver Carrito</a>
+          </div>
+        
+        
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+          <script src="{% static 'js/main.js' %}"></script>
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+  </body>
+</html>
